@@ -14,11 +14,11 @@
 		var i = $('#addinput p').size() + 1;
 
 		$('#addNew').live('click', function() {
-			$('<p><input type="text" id="more" size="40" name="p_new_' + i +'" value="" placeholder="Add answer..." /><a href="#" id="remNew">Remove</a> </p>').appendTo(addDiv);
+			$('<p><input type="text" id="answer" class="moreOption" size="40" name="p_new_' + i +'" value="" placeholder="Add answer..." /><a href="#" id="remNew">Remove</a> </p>').appendTo(addDiv);
 			i++;
 
 			// add the autocomplete functionality to new inputs (like document.ready())
-					$("#more").autocomplete("autocomplete.php", {
+					$(".moreOption").autocomplete("autocomplete.php", {
 						selectFirst: true
 					});
 
@@ -39,7 +39,7 @@
 
 	<script>
 	$(document).ready(function(){
-		$("#p_new").autocomplete("autocomplete.php", {
+		$("#answer").autocomplete("autocomplete.php", {
 			selectFirst: true
 		});
 	});
@@ -52,7 +52,7 @@
 	<form action="two.php" method="post">
 		<div id="addinput">
 			<p>
-				<input type="text" id="p_new" size="40" name="p_new" value="" placeholder="Your choice" /><a href="#" id="addNew">Add</a>
+				<input type="text" id="answer" size="40" name="p_new" value="" placeholder="Your choice" /><a href="#" id="addNew">Add</a>
 			</p>
 		</div>
 	<input type="submit">
